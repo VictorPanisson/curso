@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>QUESTÃO 05 - LISTA 02 - LÓGICA DE PROGRAMAÇÃO - SENAI</title>
+	</head>
+	<body>
+<h2>Editar Usuários</h2>
+<form id="cadastroForm">
+<label for="nome:"></label>
+<input type="text" id="nome" name="nome" required>
+
+<label for="email">E-mail:</label>
+<input type="email" id="email" name="email" required>
+
+<input type="hidden" id="indiceUsuario" value="">
+<button type="submit">Salvar</button>
+<button type="button" onclick="limparFormulario()">Cancelar</button>
+</form>
+        <h2>Usuarios Cadastrados</h2>
+
+        <table id="tabelaUsuarios">
+<thead>
+<th>Nome</th>
+<th>E-mail</th>
+<th>Ação</th>
+</thead>
+<tbody>
+<td>João</td>
+<td>João@gmail.com</td>
+<td><button onclick="editarUsuario(0)">Editar</button></td>
+</tbody>
+        </table>
+    
+
+	</body>
+	<script src="index.js"></script>
+</html>
