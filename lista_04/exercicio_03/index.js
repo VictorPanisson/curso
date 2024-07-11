@@ -1,0 +1,19 @@
+document.addEventListener('DOMContentLoaded', function() {
+    let form = document.getElementById('formNumero');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        let numero = document.getElementById('numero').value;
+
+        fetch('index.php?numero=${numero}')
+        .then(function(response){
+            return reposta.text();
+        })
+.then(function(resultado){
+    let mensagem = document.getElementById('mensagem');
+    mensagem.innerHTML = resultado;
+})
+.catch(function(error){
+    console.error('Erro ao verificar numero:',error);
+        });
+    });
+});
