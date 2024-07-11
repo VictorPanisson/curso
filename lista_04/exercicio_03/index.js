@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         let numero = document.getElementById('numero').value;
 
-        fetch('index.php?numero=${numero}')
-        .then(function(response){
-            return reposta.text();
+        fetch(`imparepar.php?numero=${numero}`)
+        .then(function(resposta){
+            return resposta.text();
         })
 .then(function(resultado){
     let mensagem = document.getElementById('mensagem');
