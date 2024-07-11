@@ -1,55 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title>LISTAS - LÓGICA DE PROGRAMAÇÃO - SENAI</title>
-    </head>
-    <body>
-        <ul>
-            <li>Lista 01</li>
+<head>
+    <meta charset="UTF-8">
+    <title>LISTAS - LÓGICA DE PROGRAMAÇÃO - SENAI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            color: #333;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: #fff;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul > li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: block;
+        }
+        ul > li > ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        ul > li > ul > li {
+            margin-bottom: 5px;
+        }
+        ul > li > ul > li > a {
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            padding: 3px 5px;
+            border-radius: 3px;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s ease;
+        }
+        ul > li > ul > li > a:hover {
+            background-color: #e0e0e0;
+        }
+        .questao-descricao {
+            display: block;
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar exercício..." onkeyup="filterExercises()">
+    </div>
+    <ul id="exerciseList">
+        <li data-descricao="Exercício básico de introdução à lógica de programação. Aborda conceitos fundamentais como variáveis e estruturas de controle.">Lista 01
             <ul>
-                <li><a href="lista_1/exercicio_01">Questão 01</a></li>
-                <li><a href="lista_1/exercicio_02">Questão 02</a></li>
-                <li><a href="lista_1/exercicio_03">Questão 03</a></li>
-                <li><a href="lista_1/exercicio_04">Questão 04</a></li>
-                <li><a href="lista_1/exercicio_05">Questão 05</a></li>
-                <li><a href="lista_1/exercicio_06">Questão 06</a></li>
-                <li><a href="lista_1/exercicio_07">Questão 07</a></li>
-                <li><a href="lista_1/exercicio_08">Questão 08</a></li>
-                <li><a href="lista_1/exercicio_09">Questão 09</a></li>
+                <li><a href="lista_1/exercicio_01">Questão 01</a><span class="questao-descricao">- Esse exercício mostra como usar JavaScript para criar um campo onde o usuário pode digitar seu nome e, ao clicar em um botão, ver uma mensagem de saudação personalizada com o nome que digitou.
+                </span></li>
+                <li><a href="lista_1/exercicio_02">Questão 02</a><span class="questao-descricao">- Este código cria um botão que, ao ser clicado, aumenta um contador de cliques exibido na página. O contador é inicializado em 0 e é incrementado a cada clique no botão.
+                </span></li>
+                <li><a href="lista_1/exercicio_03">Questão 03</a><span class="questao-descricao">- Um formulário simples onde o usuário insere o ano de nascimento. Ao clicar no botão "Calcular Idade", a idade é calculada e exibida na página.</span></li>
+                <li><a href="lista_1/exercicio_04">Questão 04</a><span class="questao-descricao">- Verifica se a idade inserida pelo usuário é maior ou igual a 18 anos ao clicar em um botão, exibindo uma mensagem correspondente.</span></li>
+                <li><a href="lista_1/exercicio_05">Questão 05</a><span class="questao-descricao">- Dois botões para alternar a visibilidade de um elemento na página usando a propriedade style.display.</span></li>
+                <li><a href="lista_1/exercicio_06">Questão 06</a><span class="questao-descricao">- Um botão que, ao ser clicado, altera aleatoriamente a cor de fundo da página usando document.body.style.backgroundColor.</span></li>
+                <li><a href="lista_1/exercicio_07">Questão 07</a><span class="questao-descricao">- Uma calculadora que permite adicionar, subtrair, multiplicar e dividir dois números. Utiliza campos de entrada para números, um seletor para escolher a operação e um botão para calcular.</span></li>
+                <li><a href="lista_1/exercicio_08">Questão 08</a><span class="questao-descricao">- Conta quantas palavras estão em um texto grande inserido pelo usuário em um campo de texto (textarea), ativado por um botão de contagem.</span></li>
+                <li><a href="lista_1/exercicio_09">Questão 09</a><span class="questao-descricao">- Um relógio digital na página que atualiza a cada segundo, mostrando apenas o horário atual.</span></li>
             </ul>
-            <li>Lista 02</li>
+        </li>
+        <li data-descricao="Desafios intermediários envolvendo estruturas de dados e algoritmos mais complexos.">Lista 02
             <ul>
-                <li><a href="lista_02/exercicio_01">Questão 01</a></li>
-                <li><a href="lista_02/exercicio_02">Questão 02</a></li>
-                <li><a href="lista_02/exercicio_03">Questão 03</a></li>
-                <li><a href="lista_02/exercicio_04">Questão 04</a></li>
-                <li><a href="lista_02/exercicio_05">Questão 05</a></li>
+                <li><a href="lista_02/exercicio_01">Questão 01</a><span class="questao-descricao">- Implemente um algoritmo eficiente para...</span></li>
+                <li><a href="lista_02/exercicio_02">Questão 02</a><span class="questao-descricao">- Escreva um programa que...</span></li>
+                <li><a href="lista_02/exercicio_03">Questão 03</a><span class="questao-descricao">- Desenvolva uma função que...</span></li>
+                <li><a href="lista_02/exercicio_04">Questão 04</a><span class="questao-descricao">- Crie um código para...</span></li>
+                <li><a href="lista_02/exercicio_05">Questão 05</a><span class="questao-descricao">- Construa um algoritmo que...</span></li>
             </ul>
-            <li>Lista 03</li>
+        </li>
+        <li data-descricao="Exercícios avançados com foco em otimização de código e solução de problemas complexos.">Lista 03
             <ul>
-                <li><a href="lista_03/exercicio_01">Questão 01</a></li>
-                <li><a href="lista_03/exercicio_02">Questão 02</a></li>
-                <li><a href="lista_03/exercicio_03">Questão 03</a></li>
-                <li><a href="lista_03/exercicio_04">Questão 04</a></li>
-                <li><a href="lista_03/exercicio_05">Questão 05</a></li>
-                <li><a href="lista_03/exercicio_06">Questão 05</a></li>
-                <li><a href="lista_03/exercicio_07">Questão 05</a></li>
-                <li><a href="lista_03/exercicio_08">Questão 05</a></li>
-                <li><a href="lista_03/exercicio_09">Questão 05</a></li>
+                <li><a href="lista_03/exercicio_01">Questão 01</a><span class="questao-descricao">- Realize a implementação de um algoritmo otimizado para...</span></li>
+                <li><a href="lista_03/exercicio_02">Questão 02</a><span class="questao-descricao">- Implemente uma função recursiva que...</span></li>
+                <li><a href="lista_03/exercicio_03">Questão 03</a><span class="questao-descricao">- Escreva um código eficiente para...</span></li>
+                <li><a href="lista_03/exercicio_04">Questão 04</a><span class="questao-descricao">- Desenvolva um algoritmo avançado que...</span></li>
+                <li><a href="lista_03/exercicio_05">Questão 05</a><span class="questao-descricao">- Crie uma função para...</span></li>
+                <li><a href="lista_03/exercicio_06">Questão 06</a><span class="questao-descricao">- Construa um programa que...</span></li>
+                <li><a href="lista_03/exercicio_07">Questão 07</a><span class="questao-descricao">- Implemente um código que...</span></li>
+                <li><a href="lista_03/exercicio_08">Questão 08</a><span class="questao-descricao">- Escreva uma função que...</span></li>
+                <li><a href="lista_03/exercicio_09">Questão 09</a><span class="questao-descricao">- Realize a otimização de...</span></li>
             </ul>
-            <li>Lista 04</li>
+        </li>
+        <li data-descricao="Problemas desafiadores para prática avançada de lógica de programação.">Lista 04
             <ul>
-                <li><a href="lista_04/exercicio_01">Questão 01</a></li>
-                <li><a href="lista_04/exercicio_02">Questão 02</a></li>
-                <li><a href="lista_04/exercicio_03">Questão 03</a></li>
-                <li><a href="lista_04/exercicio_04">Questão 04</a></li>
-                <li><a href="lista_04/exercicio_05">Questão 05</a></li>
-                <li><a href="lista_04/exercicio_06">Questão 05</a></li>
-                <li><a href="lista_04/exercicio_07">Questão 05</a></li>
-                <li><a href="lista_04/exercicio_08">Questão 05</a></li>
-                <li><a href="lista_04/exercicio_09">Questão 05</a></li>
-            </ul>
-        </ul>
-    </body>
-</html>
+                <li><a href="lista_04/exercicio_01">Questão 01</a><span class="questao-descricao">- Implemente um algoritmo que resolva...</span></li>
+                <li><a href="lista_04/exercicio_02">Questão 02</a><span class="questao-descricao">- Desenvolva uma função que...</span></li>
+                <li><a href="lista_04/exercicio_03">Questão 03</a><span class="questao-descricao">- Escreva um código para...</span></li>
+                <li><a href="lista_04/exercicio_04">Questão 04</a><span class="questao-descricao">- Construa um programa eficiente que...</span></li>
+                <li><a href="lista_04/exercicio_05">Questão 05</a><span class="questao-descricao">- Crie um algoritmo que...</span></li>
+                <li><a href="lista_04/exercicio_06">Questão 06</a><span class="questao-descricao">- Implemente uma função que...</span></li>
+                <li><a href="lista_04/exercicio_07">Questão 07</a><span class="questao-descricao">- Realize a otimização de um código para...</span></li>
+                <li><a href="lista_04/exercicio_08">Questão 08</a><span class="questao-descricao">- Escreva um programa que...</span></li>
+                <li><a href="lista_
