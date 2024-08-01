@@ -2,7 +2,7 @@
 
 
 function converteFahrenheitParaCelsius($fahrenheit) {
-    // Fórmula de conversão
+
     $celsius = 5 * ($fahrenheit - 32) / 9;
     return $celsius;
 }
