@@ -113,4 +113,28 @@
                 <li><a href="lista_04/exercicio_06">Questão 06</a><span class="questao-descricao">- Implemente uma função que...</span></li>
                 <li><a href="lista_04/exercicio_07">Questão 07</a><span class="questao-descricao">- Realize a otimização de um código para...</span></li>
                 <li><a href="lista_04/exercicio_08">Questão 08</a><span class="questao-descricao">- Escreva um programa que...</span></li>
-                <li><a href="lista_
+                <li><a href="lista_04/exercicio_09">Questão 09</a><span class="questao-descricao">- Implemente uma solução para...</span></li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        function filterExercises() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toUpperCase();
+            var ul = document.getElementById('exerciseList');
+            var li = ul.getElementsByTagName('li');
+
+            for (var i = 0; i < li.length; i++) {
+                var a = li[i].getElementsByTagName('a')[0];
+                var txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = '';
+                } else {
+                    li[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
